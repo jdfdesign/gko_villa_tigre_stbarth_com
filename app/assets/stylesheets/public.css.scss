@@ -1,17 +1,269 @@
+/* custom variables >>> */ 
+$altColor: #900; //red 
+/* <<< custom variables */ 
+$bodyBackgroundColor: #F8F8F8;
+
+// Typography
+$baseFontFamily: "nimbus-sans", "Lucida Grande", Arial, sans-serif; 
+$baseFontSize: 9px;
+$baseLineHeight: 24px;
+$textColor: #4C4C4C;
+
+$headingTextColor: #191919;
+
+// Navbar
+$navbarBackgroundHighlight: #F8F8F8;
+$navbarBackground: #F8F8F8;
+$navbarButtonBackgroundHighlight: black; 
+$navbarButtonBackground: black; 
+$navbarButtonIconBarColor: white;
+
+
+ 
+// Links
+$linkColor: #ADADAD;
+$linkColorHover: #191919;
+
+// Import
 @import "gko_public_all"; 
 @import "gko/elastislide"; 
+
 /*-----------------------------------------
    SHARED STYLES 
 ----------------------------------------- */ 
+.uppercase_font_style {
+	line-height: 24px;
+	font-size: 13px;
+	letter-spacing: 1px; 
+	text-transform: uppercase; 
+}
+
 /*-----------------------------------------
  TYPOGRAPHY 
 ----------------------------------------- */
+h1 {
+	font-size: 12px;
+	line-height: 70px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	letter-spacing: 3px;
+}
+h2 {
+	font-size: 12px;
+	font-style: italic;
+	line-height: 70px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	letter-spacing: 3px;
+}
+h3 {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 70px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	letter-spacing: 3px;
+}
+h4 {
+	font-size: 12px;
+	font-weight: normal;
+	font-style: italic;
+	line-height: 70px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	letter-spacing: 3px;
+}
 /*-----------------------------------------
    OVERWRITTE
 ----------------------------------------- */
+h1.page-title {
+	background: #FFF asset_url("sep.png", image) no-repeat -58px 50%;
+	background-position: center bottom; 
+}
+.html_text {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center; 
+	h2 {
+		text-align: center;
+		border-top: 1px solid $textColor;
+		border-bottom: 1px solid $textColor;
+		padding: $baseLineHeight * .5 0;
+		margin: $baseLineHeight 0;
+	}
+	p, ul {
+		font-weight: 300;
+	}
+}
+.block-grid h2 {
+	font-size: $baseFontSize;
+}
+.block-grid .entry-thumb {
+	background-color: white;
+	border-bottom: 4px solid white;
+	a {
+		background-color: white;
+		display:block;
+	}
+	img {
+		@include transition(opacity .5s linear);
+		&:hover {
+			opacity: .7;
+		}; 
+	}
+}
 /*-----------------------------------------
    STRUCTURE
 ----------------------------------------- */ 
+body {
+	display: none;
+}
+.row-fluid {
+	margin: 0;
+}
+#content-container {
+	border-left: 12px solid $linkColorHover;
+	padding-left: 0; 
+}
+#main-column { 
+	//margin-left: 230px;
+	background-color: #FFFFFF; 
+	.main-column-inner {
+		padding: 0 24px;
+	} 
+}
+/*-----------------------------------------
+   SLIDESHOW
+----------------------------------------- */ 
+.diaporama {
+	margin: 0 -24px $baseLineHeight -24px;
+	background-color: $linkColorHover;
+}
+.image-large-wrapper {
+	a.image-large-nav {
+		top: 50%;
+		left: 8px;
+		background: #FFF asset_url("icons.png", image) no-repeat 0 0;
+		@include circle(30px);
+		opacity: .7;
+		&:hover {
+			opacity: 1;
+		};
+	}
+	a.image-large-nav.image-large-nav-next{
+		right:8px;
+		background-position: -28px 0;
+	}
+} 
+.images-thumbnails-container{
+	padding: 2px 37px;
+}
+.images-thumbnails{
+	a{
+		border:none;
+	}
+}
 /*-----------------------------------------
  HEADER
------------------------------------------ */ 
+----------------------------------------- */
+#header {
+	position:relative;
+	.row-fluid {
+		float: none;
+		clear: both;
+		display: block;
+		text-align: center;
+	}
+}
+ 
+.navbar {
+	text-align: center;
+}
+.navbar .brand {
+	@include logo(200px, 98px);
+	margin: 60px 0 30px 0;
+	padding: 16px 0;
+	float: none;
+	clear: both;
+	display: block;
+	text-align: center;
+}
+.header-nav {
+	float: none;
+	clear: both;
+	display: block;
+	text-align: center;
+	.nav {
+		@include vertical-nav;
+		float: none;
+		clear: both;
+		display: block;
+		text-align: center;
+	} 
+	.nav > li > a {
+		text-transform: uppercase;
+		font-size: 10px;
+		font-weight: normal;
+		letter-spacing: 2px;
+		line-height: 28px;
+	}
+}
+.navbar .nav-collapse {
+	clear: both;
+}
+#footer {
+	position: absolute;
+	bottom: 34px;
+	left: 0 auto;
+	right: 0 auto;
+} 
+#copyright {
+	position: absolute;
+	bottom: 12px;
+	left: 0 auto;
+	right: 0 auto;
+}
+/*-----------------------------------------
+ RESPONSIVE
+----------------------------------------- */
+@import "gko/responsive";
+
+
+// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
+// --------------------------------------------------
+
+@media (max-width: 980px) {
+  // GRID & CONTAINERS
+  // -----------------
+  // Remove width from containers
+  .container-fluid {
+    width: auto;
+    padding: 0;
+  }
+	#content-container {
+		border-top: 12px solid black;
+		border-left: none;
+		float: none;
+		width: auto;
+	} 
+  // Fluid rows
+  .row-fluid {
+    width: 100%;
+  }
+  // Undo negative margin on rows
+  .row {
+    margin-left: 0;
+  }
+  // Make all columns even
+  .row > [class*="span"],
+  .row-fluid > [class*="span"] {
+    float: none;
+    display: block;
+    width: auto;
+    margin: 0;
+  }
+}
