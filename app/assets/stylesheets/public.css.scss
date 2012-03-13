@@ -139,25 +139,24 @@ body {
 /*-----------------------------------------
    SLIDESHOW
 ----------------------------------------- */ 
+.carousel,
 .diaporama {
 	margin: 0 -24px $baseLineHeight -24px;
 	background-color: $linkColorHover;
 }
-.image-large-wrapper {
-	a.image-large-nav {
-		top: 50%;
-		left: 8px;
-		background: #FFF asset_url("icons.png", image) no-repeat 0 0;
-		@include circle(30px);
-		opacity: .7;
-		&:hover {
-			opacity: 1;
-		};
-	}
-	a.image-large-nav.image-large-nav-next{
+.carousel-control {
+	background: #FFF asset_url("icons.png", image) no-repeat 0 0;
+	@include circle(30px);
+	opacity: .7;
+	text-indent: -9999px;
+	border: none;
+	&:hover {
+		opacity: 1;
+	};
+	&.right {
 		right:8px;
 		background-position: -28px 0;
-	}
+	} 
 } 
 .images-thumbnails-container{
 	padding: 2px 37px;
@@ -185,14 +184,15 @@ body {
 }
 .navbar .brand {
 	@include logo(200px, 98px);
-	margin: 60px 0 30px 0;
-	padding: 16px 0;
+
 	float: none;
 	clear: both;
 	display: block;
 	text-align: center;
 }
-.header-nav {
+.header-nav { 
+	margin: 60px 0 30px 0;
+	padding: 16px 0;
 	float: none;
 	clear: both;
 	display: block;
@@ -214,6 +214,7 @@ body {
 }
 .navbar .nav-collapse {
 	clear: both;
+	margin: 30px 0;
 }
 #footer {
 	position: absolute;
