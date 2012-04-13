@@ -4,8 +4,8 @@ $altColor: #900; //red
 $bodyBackgroundColor: #F8F8F8;
 
 // Typography
-$baseFontFamily: "nimbus-sans", "Lucida Grande", Arial, sans-serif; 
-$baseFontSize: 9px;
+$baseFontFamily: "garamond-premier-pro-caption", "Georgia", serif; 
+$baseFontSize: 12px;
 $baseLineHeight: 24px;
 $textColor: #4C4C4C;
 
@@ -18,10 +18,8 @@ $navbarButtonBackgroundHighlight: black;
 $navbarButtonBackground: black; 
 $navbarButtonIconBarColor: white;
 
-
- 
 // Links
-$linkColor: #ADADAD;
+//$linkColor: #ADADAD;
 $linkColorHover: #191919;
 
 // Import
@@ -61,7 +59,7 @@ h2 {
 h3 {
 	font-size: 12px;
 	font-weight: normal;
-	line-height: 70px;
+	line-height: 24px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	text-align: center;
@@ -80,40 +78,16 @@ h4 {
 /*-----------------------------------------
    OVERWRITTE
 ----------------------------------------- */
-h1.page-title {
-	background: #FFF asset_url("sep.png", image) no-repeat -58px 50%;
-	background-position: center bottom; 
-}
 .html_text {
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	text-align: center; 
-	h2 {
-		text-align: center;
-		border-top: 1px solid $textColor;
-		border-bottom: 1px solid $textColor;
-		padding: $baseLineHeight * .5 0;
-		margin: $baseLineHeight 0;
-	}
+	text-align: center;
 	p, ul {
 		font-weight: 300;
 	}
-}
-.block-grid h2 {
-	font-size: $baseFontSize;
-}
-.block-grid .entry-thumb {
-	background-color: white;
-	border-bottom: 4px solid white;
-	a {
-		background-color: white;
-		display:block;
-	}
-	img {
-		@include transition(opacity .5s linear);
-		&:hover {
-			opacity: .7;
-		}; 
+	p {
+		margin-bottom: $baseLineHeight;
+	//	@include columns(50%, 2, 50px, #ccc, dotted);
 	}
 }
 /*-----------------------------------------
@@ -122,29 +96,17 @@ h1.page-title {
 body {
 	display: none;
 }
-.row-fluid {
-	margin: 0;
-}
-#content-container {
-	border-left: 12px solid $linkColorHover;
-	padding-left: 0; 
-}
-#main-column { 
-	//margin-left: 230px;
-	background-color: #FFFFFF; 
-	.main-column-inner {
-		padding: 0 24px;
-	} 
-}
 /*-----------------------------------------
    SLIDESHOW
 ----------------------------------------- */ 
-.carousel,
 .diaporama {
-	margin: 0 -24px $baseLineHeight -24px;
-	background-color: $linkColorHover;
+	background-color: white;
+	padding:18px;
+	border: 1px solid #B7B6B6;
+	margin-bottom: $baseLineHeight;
 }
 .carousel-control {
+	top: 50%;
 	background: #FFF asset_url("icons.png", image) no-repeat 0 0;
 	@include circle(30px);
 	opacity: .7;
@@ -152,119 +114,86 @@ body {
 	border: none;
 	&:hover {
 		opacity: 1;
-	};
+	}
 	&.right {
 		right:8px;
 		background-position: -28px 0;
-	} 
-} 
-.images-thumbnails-container{
-	padding: 2px 37px;
-}
-.images-thumbnails{
-	a{
-		border:none;
 	}
-}
+} 
+
 /*-----------------------------------------
  HEADER
 ----------------------------------------- */
-#header {
-	position:relative;
-	.row-fluid {
-		float: none;
-		clear: both;
-		display: block;
-		text-align: center;
-	}
+body {
+	border-top: 3px solid #B7B6B6;
 }
- 
-.navbar {
-	text-align: center;
+.header-nav {
+	border-bottom: 1px solid #B7B6B6; 
+	padding: $baseLineHeight * 1.5 0;
 }
-.navbar .brand {
-	@include logo(200px, 98px);
-
-	float: none;
-	clear: both;
-	display: block;
-	text-align: center;
-}
-.header-nav { 
-	margin: 60px 0 30px 0;
-	padding: 16px 0;
-	float: none;
-	clear: both;
-	display: block;
-	text-align: center;
-	.nav {
-		@include vertical-nav;
-		float: none;
-		clear: both;
-		display: block;
-		text-align: center;
-	} 
-	.nav > li > a {
-		text-transform: uppercase;
-		font-size: 10px;
-		font-weight: normal;
-		letter-spacing: 2px;
-		line-height: 28px;
-	}
-}
-.navbar .nav-collapse {
-	clear: both;
-	margin: 30px 0;
-}
-#footer {
-	position: absolute;
-	bottom: 34px;
-	left: 0 auto;
-	right: 0 auto;
-} 
-#copyright {
-	position: absolute;
-	bottom: 12px;
-	left: 0 auto;
-	right: 0 auto;
+.navbar .dropdown-menu a,
+.header-nav .nav > li > a {
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: normal;
+	letter-spacing: 2px;
+	line-height: 28px;
 }
 /*-----------------------------------------
  RESPONSIVE
 ----------------------------------------- */
 @import "gko/responsive";
+@media (min-width: 980px) {
+	/*-----------------------------------------
+	 HEADER
+	----------------------------------------- */
+	.header-nav {
+		border-bottom: 1px solid #B7B6B6; 
+		padding: $baseLineHeight * 1.5 0;
 
-
-// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
-// --------------------------------------------------
-
-@media (max-width: 980px) {
-  // GRID & CONTAINERS
-  // -----------------
-  // Remove width from containers
-  .container-fluid {
-    width: auto;
-    padding: 0;
-  }
-	#content-container {
-		border-top: 12px solid black;
-		border-left: none;
-		float: none;
-		width: auto;
-	} 
-  // Fluid rows
-  .row-fluid {
-    width: 100%;
-  }
-  // Undo negative margin on rows
-  .row {
-    margin-left: 0;
-  }
-  // Make all columns even
-  .row > [class*="span"],
-  .row-fluid > [class*="span"] {
-    float: none;
-    display: block;
-    width: auto;
-    margin: 0;
-  }
+		@include clearfix;
+		.nav > li { 
+			.text {
+				padding-left: 16px;
+			}
+			.icon {
+				display: inline-block;
+				width:21px;
+				height: 4px;
+				background: transparent asset-url("nav-dot.png", image) 0 0 no-repeat;
+			} 
+			&:first-child { 
+				background: none;
+				padding-left: 0;
+				.text {
+					padding-left: 0; 
+				}
+				.icon {
+					display: none;
+				} 
+			}
+		}	
+		nav {
+			float: right;
+		}
+	}
+	
+	/*-----------------------------------------
+	 FOOTER
+	----------------------------------------- */
+	#footer {
+		border-top: 1px solid #B7B6B6; 
+		padding-bottom: $baseLineHeight * .5;
+		padding-top: $baseLineHeight * .5;
+		nav {
+			@include clearfix;
+			@include center-nav;
+		}
+		.nav > li > a  {
+			font-weight: normal;
+			font-size: 9px;
+			letter-spacing: 1px; 
+			text-transform: uppercase;
+		}
+	}
 }
