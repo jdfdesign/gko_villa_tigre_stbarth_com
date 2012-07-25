@@ -92,20 +92,24 @@ $(document).ready(function() {
 	
 	function init() {
 		//resizeContent();
-		f_init_galleria();
+		
 		$("body").fadeIn(3000).css("display", "block");
 		//$(window).bind('resize', resizeContent);
-		$(".galleria").galleria({
-            autoplay: true,
-            responsive: true,
-            height: .65,
-			carousel: false,
-		//	thumbnails: "numbers",
-            imageCrop: 'landscape',
-            transition: 'flash',
-            showCounter: false,
-            showInfo: false
-        })
+		if($(".galleria").length > 0) {
+			f_init_galleria();
+			$(".galleria").galleria({
+	            autoplay: true,
+	            responsive: true,
+	            height: .65,
+				carousel: false,
+			//	thumbnails: "numbers",
+	            imageCrop: 'landscape',
+	            transition: 'flash',
+	            showCounter: false,
+	            showInfo: false
+	        })
+		}
+
 	}
 	
 	init();
