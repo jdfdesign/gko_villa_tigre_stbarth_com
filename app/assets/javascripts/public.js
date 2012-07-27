@@ -81,20 +81,9 @@ $(document).ready(function() {
 		        }
 		    });
 	}
-	
-	function resizeContent() {
-		var bodyHeight = $("#wrapper-wide-body").height(),
-		winHeight = $(window).height(),
-		h = Math.max(bodyHeight, winHeight);
-				
-		$("#main-column, #header").css({'min-height': h});
-	}
-	
+
 	function init() {
-		//resizeContent();
-		
 		$("body").fadeIn(3000).css("display", "block");
-		//$(window).bind('resize', resizeContent);
 		if($(".galleria").length > 0) {
 			f_init_galleria();
 			$(".galleria").galleria({

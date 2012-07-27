@@ -149,22 +149,40 @@
 
 .galleria-image-nav-left,
 .galleria-image-nav-right {
-    opacity: .3;
-    filter: alpha(opacity = 30);
     cursor: pointer;
-    width: 62px;
-    height: 124px;
     position: absolute;
     left: 10px;
     z-index: 2;
     background-position: 0 46px;
-}
 
+	width: 40px;
+	height: 40px;
+	font-size: 40px;
+	font-weight: 100;
+	line-height: 34px;
+	color: $white;
+	text-align: center;
+	background-color: $grayDarker;
+	border: 3px solid $white;
+  	@include border-radius(23px);
+  	@include opacity(50);
+  	&:hover {
+    	color: $white;
+    	text-decoration: none;
+    	@include opacity(90);
+  	}
+}
+.galleria-image-nav-left:before {
+   content: '\27E8';
+}
 .galleria-image-nav-right {
     left: auto;
     right: 10px;
     background-position: -254px 46px;
     z-index: 2;
+	&:before {
+	   content: '\27E9';
+	}
 }
 
 .notouch .galleria-image-nav-left:hover,

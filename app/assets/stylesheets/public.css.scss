@@ -85,7 +85,13 @@ $navbarLinkBackgroundActive:      $navbarBackground;
 	letter-spacing: 1px; 
 	text-transform: uppercase; 
 }
-
+/*-----------------------------------------
+ LAYOUT 
+----------------------------------------- */
+#wrapper-wide-body {
+	max-width: 1020px;
+	@include center-block;
+}
 /*-----------------------------------------
  TYPOGRAPHY 
 ----------------------------------------- */
@@ -137,6 +143,9 @@ h4 {
 	}
 	p {
 		margin-bottom: $baseLineHeight;
+	}
+	ul {
+		list-style-position: inside;
 	}
 }
 /*-----------------------------------------
